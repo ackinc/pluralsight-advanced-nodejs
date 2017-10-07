@@ -12,7 +12,7 @@ files.forEach(file => {
             console.error(`Error getting info for file: ${file}`);
             console.error(err);
         } else {
-            fs.truncate(filepath, stats.size / 2, (err) => {
+            fs.truncate(filepath, Math.floor(stats.size / 2), (err) => {
                 if (err) {
                     console.error(`Error truncating ${file}`);
                     console.error(err);
